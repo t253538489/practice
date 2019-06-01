@@ -44,6 +44,7 @@ header{
 	position:absolute;
 	bottom:20px;
 	right:0px;
+	height:50px;
 }
 .focus ul li{
 	width:30px;
@@ -56,8 +57,11 @@ header{
 	float:left;
 }
 .focus ul li:hover{
-	/*height:46px;*/
-	background:rgb(255,255,255);
+	height: 46px;
+  	position: relative;/* 由于元素的高度默认增加是往下，所以使用position属性bottom值改变方向 */
+  	bottom: 10px; /*通过改变bottom值来抵消元素向下增加的高度，元素向下增加10px，定位向上位移10px，效果就像元素向上移动了*/
+  	line-height: 56px; /*在li的高度增加10px时，要想内容保持原有位置line-height值必须是要20px加原有高度*/
+	background:#fff;
 }
 .nav{
 	height:51px;
